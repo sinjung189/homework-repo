@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나만 프필</title>
+</head>
+<body>
+    <script>
+        //  변수 만들기
+        let username = "김신중";
+        let age = 26;
+        let isStudent = true;
+        let hobby =  ["퍼즐", "운동"];
+        let emptyVal = null;
+
+        // 타입 생성
+        console.log(typeof username);
+        console.log(typeof age);
+        //  주의 : null 은 "object"로 나옴 
+
+        // 삼항 연산자 활용 
+        let status = age >= 18 ? "성인" : "학생";
+        console.log ("제 신분은 " +  status  + " 입니다.");
+
+    
+
+        // 조건문 연습 
+        let rating = 70;
+
+        if (rating >= 90) {
+            console.log("A등급");
+        }
+        
+        else if (rating >= 70) {
+            console.log ("B등급");
+        }
+
+        else { console.log ("C등급")};
+        
+        // 짝수 홀/수  연습
+        let number = 9;
+        let result = number % 2 === 0 ? "짝수" : "홀수" ;
+        console.log (result);
+
+
+        // 반복문 
+        for ( let i = 0; i < 3; i++) {
+            console.log( i );
+        }
+
+        // 2배수 
+
+        for (let i = 1; i <= 9; i++) {
+            console.log(`2*${1} = ${2*i}`);
+              
+        }
+    </script>
+    
+</body>
+</html>
