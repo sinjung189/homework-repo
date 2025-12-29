@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const cart = []
+        cart.push ({name : "시리얼", price: 3980});
+        cart.push ({name : "우유" , price: 1980});
+        
+        // findIndex : 조건에 맞는 첫번째 요소 위치 찾는 
+        // cart 하나씩 돌면서 각 요소 아이템 name 사과맞나 확인
+        const idx = cart.findIndex(
+        item => item.name === "시리얼"
+        );
+
+        // 조건 : 맞으면 index  번호로 반환 / 없으면 -1 반환 ( -1 없다는 의미 )
+        // splice 삭제 : (시작위치, 몇개 지울까)
+        // a - b 오름 , b - a 내림
+        if (idx !== -1) cart.splice(idx, 1);
+
+        cart.sort((a,b) => a.price - b.price);
+        console.log ( cart.map (i => i.name).join(","));
+
+    </script>
+</body>
+</html>
