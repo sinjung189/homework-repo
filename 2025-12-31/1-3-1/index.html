@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const bth = document.querySelector(`#myBtn`);
+        console.log(bth.tagName)  // BUTTON
+        console.log(bth.id)        // myBtn
+
+
+        // parentElement.tagName : 버튼을 감싸고 있는 부모 태그 이름
+        // children.length : 버튼 안에 들어있는 자식 요소 개수 ?
+        console.log(bth.parentElement.tagName);
+        console.log(bth.children.length);
+
+
+        //textContent -> 상자 안 글자 ( 텍스트 생성 )
+        //innerHTML -> 태그 포함가능 ( 주의해서 써야함 )
+        const result = document.querySelector(`#result`)
+        result.textContent = `tagName: ${bth.tagName}`;   // 버튼의 태그 이름을 화면에 출력
+
+        // tagName → 태그 이름 (대문자)
+        // id → 요소 id
+        // parentElement → 부모 요소
+        // children.length → 자식 요소 개수
+
+    </script>
+</body>
+</html>
