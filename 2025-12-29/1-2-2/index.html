@@ -24,7 +24,7 @@
             cartSimple.splice (index,1);
         }
 
-        console.log (`2.${targer} 삭제 후 :`, cartSimple);
+        console.log (`2.${targer} 삭제 후 :`,[...cartSimple]);
 
         const listStr = cartSimple.join ("/");
         console.log ("3.목록 출력:",listStr);
@@ -37,7 +37,7 @@
             ({name : "우유" , price: 14980})
         ];
 
-        console.log("원본:", products);
+        console.log("원본:", [...products]);
 
         //4. 가격순 정렬 (sort + 바교함수)
         // 오름차순 
