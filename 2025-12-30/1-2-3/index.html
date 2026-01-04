@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const student = {
+
+            name : "홍길동",
+            age : 150,
+            
+            scores: { math : 90 , english : 85 }
+                
+            
+        };
+
+        console.log(`1.학생 객체:`, student);
+
+        // getProperty 함수 ( 동적 접근 )
+        function getProperty (obj, key) {
+            return obj[key];    // 대괄호 표기법 필수 
+        }
+        
+        console.log (`2.동적 접근 (name):`, getProperty(student,`name`));
+
+
+        // 평균 계산 
+        function getAverage (obj) {
+            const math = obj.scores.math
+            const english = obj.scores.english
+            return (math + english) / 2; 
+        }
+    
+        // 깊은
+
+        console.log ( ` \n[복사 텍스트]`);
+
+        //얕은 
+        const shallowCopy = [...student]
+
+
+        // 깊은 (JSON 방식)
+        const deepCopy = JSON.parse(JSON.stringify(student));
+        
+        //  점수 수정
+        deeCopy.scores.math = 100;
+
+        console.log (`원본 수학 점수:`, student.scores.math); 
+
+        console.log(`복사본 수학 점수:`,deepCopy.scores.math);
+
+
+        //  얕은 복사 문제주의!
+        //  복사였다면 원본도 100으로 바뀌었을 것
+        //  shallowCOpy.scores.math = 0; -> 원본도 0이 됨  
+        // const copy1 = {...student};
+        
+        
+    </script>
+</body>
+</html>
