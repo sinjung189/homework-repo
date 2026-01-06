@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="button-group">
+        <button data-action="add">추가</button>
+        <button data-action="edit">수정</button>
+        <button data-action="delete">삭제</button>
+    </div>
+
+    <script>
+        // 부모에 리스너 등록
+        const group = document.querySelector(`.button-group`)
+        group.addEventListener(`click`,handleClick);
+
+
+
+        // e,target = 실제 클릭 지점 , closest (`button`) = 그 클릭 버튼 찾는
+        // 주의 : e.target , e.currentTarget  헷갈리지말기 
+        //       e.target : 실제 클릭 + 변하는 / e.currentTarget : 이벤트 리스너 달린 요소 + 고정 
+        function handleClick(e) {
+            const btn = e.target.closest(`button`);
+            if(!btn) return;  // >> 버튼 아니면 무시
+            const action = btn.dataset.action;
+        
+
+            // dataset 으로 action 
+            // 버튼에 적어둔 역할 이름을 꺼내서 콘솔에 보여주는
+            // 커스텀 데이터 속성 dataset,action 까먹지 말자..
+            console.log (`Action`,action)
+
+            switch (action) {
+                case`add`: 
+                console.log(`추가`)
+                break;
+
+                case`edit`: 
+                console.log(`수정`)
+                break;
+                    
+                case`delete`:
+                console.log(`삭제`)
+                break;
+            }
+        }
+    </script>
+</body>
+</html>
