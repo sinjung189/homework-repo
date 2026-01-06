@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const users = [
+            { name: "Kim", profile: { bio: "Hi" } },
+            { name: "Lee", profile: null }
+        ];
+
+
+        //for...of : 배열 하나씩 
+        // ?. : 옵셔널 / ?? : 널 병합 
+        // 값이 null 또는 undefined = 소개없음 
+    for (const user of users) {
+        const bio = user.profile?.bio ?? `소개없음`; 
+
+
+        
+        // 템플릿 리터널 
+        // innerHTML = HTML로 넣는 (통로 느낌) / textContent = 글자로만 헷갈리지말기!! 
+
+        //대입 연산자 
+        // += : 더해서 대입    /  -= : 빼서 대입 (innerHTML 같이 사용)
+        document.body.innerHTML +=
+
+        `<div>
+           <p> <strong>${user.name} : ${bio}</strong> </p>
+         </div>`; 
+
+    
+        }
+        
+        // 해석 : bio = user.profile?.bio 가 있으면 그 값 없음 (null 또는 undefined) 소개없음
+        //        그리고 document.body 안의 HTML에 그 결과를 더해서 대입하고 화면에 띄운다?
+
+        // 콘솔출력 : 
+    </script>
+</body>
+</html>
