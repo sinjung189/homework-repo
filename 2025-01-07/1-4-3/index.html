@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function createCounter () {
+        // private 변수
+        let count = 0; 
+
+        // 함수는 값 하나만 리턴이라는 점!
+        // 담아서 여러 개를 리턴 가능
+        return {
+
+            //메서드 구현 
+            increment() {
+                count++
+                return count;
+            },
+            getValue() {
+                return count;
+            }
+            
+        }
+    }
+
+    
+    const counter1 = createCounter();
+    const counter2 = createCounter();
+    counter1.increment() 
+    counter1.increment()
+    console.log (counter1.increment())
+    </script>
+</body>
+</html>
