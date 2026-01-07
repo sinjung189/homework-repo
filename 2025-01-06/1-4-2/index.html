@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var defaultSettings = { 
+            theme: 'blue', 
+            showSidebar: true 
+            };
+
+            // 1. 설정 병합 함수
+            var updateSettings = (userSettings) => {
+
+            // 수동 병합 (복잡함)
+            // var final = {};
+            // final.theme = userSettings.theme || defaultSettings.theme;
+            // final.showSidebar = userSettings.showSidebar || defaultSettings.showSidebar;
+            
+            const final = {...defaultSettings, ...userSettings}
+
+            // 2. 결과 출력
+            // console.log("테마: " + final.theme);
+            // return final;
+
+            const { theme } = final;
+            console.log (`테마:${theme}`);
+
+            return final;
+        };
+        
+           
+        updateSettings({theme:`dark`})
+        // 가끔 헷갈리면 머리에 박아넣기..
+        // {} → 키 기반 (객체)
+        // [] → 순서 기반 (배열)
+        // () → 실행 (함수)
+    </script>
+</body>
+</html>
