@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 아직 안 익숙 이해하고 실습 더하기 
+
+        orderPizza('Pepperoni', (err, orderId) => {
+            if (err) return handleError(err);
+            
+            makeDough(orderId, (err, dough) => {
+                if (err) return handleError(err);
+                
+                bakePizza(dough, (err, pizza) => {
+                if (err) return handleError(err);
+                console.log(`${pizza.name} 배달 완료! 🍕`);
+                });
+            });
+        });
+
+
+        
+        async function deliverPizza() {
+            try {
+                const orderId = await orderPizza (`pepperoni`)
+                const dough = await makeDough(orderId)
+                const pizza = await bakePizza(dough)
+
+                console.log(`${pizza.name} 배달 완료~! `)
+            } catch (err) {
+                console.error(`배달 실패ㅇ!!`,err)
+            }
+        }
+
+        deliverPizza()
+
+
+    </script>
+</body>
+</html>
