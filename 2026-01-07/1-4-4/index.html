@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            // const hero = {
+            // name: 'Batman',
+            // call() {
+            //     console.log(this.name);
+            // }
+            // };
+
+            // // this 손실 (undefined)
+            // const stolenCall = hero.call;
+            // stolenCall();
+
+            // // bind로 해결
+            // const fixedCall = ???;
+            // fixedCall()
+            
+
+
+            const hero = {
+            name: 'Batman',
+            call() {
+                console.log(this.name);
+            }
+            };
+
+            // this 손실 (undefined)
+            //  이유 : . 왼쪽이 주체 hero 호출하려면 hero.call 
+            //          >> stolenCall 단독 호출이다보니 주체가 없음
+            //               stolenCall 불러오면 대상자 모름 this 잃고 (undefined)
+            //                     그러니 bind 하여 hero 고정시켜버리는 거 (고정단축키 느낌)
+            const stolenCall = hero.call;
+            stolenCall();
+
+            // bind로 해결
+            const flxedCall =  hero.call.bind(hero)
+            fixedCall()
+
+
+    </script>
+
+    <script>
+        // this 잃어버리는 예제 
+        const user = {
+                name: '하나롱',
+                sayName() {
+                    console.log(this.name);
+                }
+            };
+
+            setTimeout(user.sayName, 1000);
+    </script>
+</body>
+</html>

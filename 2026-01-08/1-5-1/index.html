@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const products = [
+            { name: 'Mouse', price: 50000, stock: 10 },
+            { name: 'Key', price: 15000, stock: 0 },
+            { name: 'Monitor', price: 400000, stock: 5 },
+            { name: 'Speaker', price: 80000, stock: 0 }
+        ];
+
+        const result = products
+
+
+        // p를 풀어서 복사 + 새 속성 하나 추가 >> 스프레드 활용 
+        // () 감싸는 이유는 {} 함수블록으로 볼 수 있으니 해야 객체라고 인식
+        // a - b 오름차순  b - a 내림차순  !! 외우기 ~!!!
+        // 원가 기준이면  a,price - b,price 이겠지만 할인가라서 저렇게 씀 
+
+            .filter(p => p.stock > 0)
+            .map(p => ({
+                ...p,
+                salePrice: p.price * 0.9
+            }))
+            .sort((a,b) => a.salePrice - b.salePrice);
+
+        console.log(result);
+
+        // 주의 : 객체 속성 접근 무조건 . 
+        //       화살표 함수 안에 콤마 (,) 나오면 에러남 !!
+    </script>
+</body>
+</html>

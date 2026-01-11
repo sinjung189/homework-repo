@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('1. 가게 오픈');
+
+
+        // 매크로 (마이크로 다음으로)
+        setTimeout(() => {
+            console.log('2. 일반 손님 주문 완료');
+        }, 0);
+
+        // 마이크로 (우선순위 승)
+        Promise.resolve().then(() => {
+            console.log('3. VIP 손님 입장');
+        });
+
+        console.log('4. 재료 준비');
+
+        // 순서 => 가게오픈 > 재료 준비 > VIP 손님 입장 > 일반 손님 주문완료 
+        // 동기 비동기 차이와 마이크로 매크로 차이를 확인해야함
+
+        // 동기 : 한 작업이 끝나야 다음 ~ 실행 순차적으로 실행!!  
+        // 주의 : 막히면 전체 멈춤
+                
+        // 비동기 : 안 급한 건 맡겨두고 나머지 실행 >> 나중에 준비되면 알려주는? 
+        //          기다릴 필요 없는 건 넘기고 , 끝나면 알려주는~!!
+
+        // 동기 > 비동기 > 비동기 안 큐종류 ( 매크로 다음 마이크로 순서 )
+
+        // 실행 순서는 같음 1초 늘려도 늦어질 뿐 그대로임  
+        // >> 대신 Promise 여기에 setTimeout 넣으면 순서가 바뀔 수 있음 매크로가 되니깐?
+    </script>
+</body>
+</html>
