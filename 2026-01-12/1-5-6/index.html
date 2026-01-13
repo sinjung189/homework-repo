@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="todInput" placeholder="입 력 할 거 야 ?">
+    <button id="addBtn">추가</button>
+
+    <script>
+        const todInput = document.getElementById(`todoInput`)
+        const addBtn = document.getElementById(`addBtn`)
+        const todoLIst = document.getElementById(`todoList`)
+        // 정해서
+        const TODO_KEY = `todos`; 
+
+        // 1. 추가 버튼 누르면 리스트가 추가 
+        //      (추가 버튼 추가 + li만들어서 인풋 데이터를 넣어주고 ul에 보내고 버튼에 클릭이벤트 달기 )
+        //      addTodo함수를 만들어서 작업 
+
+        // 이벤트 추가
+        addBtn.addEventListener(`click`,addTodo);
+
+
+        // locaIstorage >> 브라우저 간이 저장소 ( 새로고침 해도 안 날아감 )
+        // setItem (키,값)
+        // JSON.stringify(todos) >> 배열 / 객체 그대로 못넣고 문자열만 로컬스토리지에 저장가능 
+        function saveTodo(todos) {
+            localStorage.setItem(`TODO_KEY`,JSON.stringify(todos))
+        }
+
+        // 저장된 todos 있으면 그걸 꺼내서 쓰고 없으면 그냥 빈 배열 주거라.
+        function loadTods () {
+          const savedTodos =  localStorage.getItem(`TODO_KEY`); // 없으면 null
+          return savedTodos ? JSON.parse(savedTodos) : []; 
+        }
+
+        function addTodo() {
+            // 값있나없나 검사
+            const text = todoInput.value.trim();
+
+            if(!text) return; 
+
+            const  todos = loadTods();  // [] 또는  [`문자열`]
+            todos.push(text)
+            saveTodo(todos)
+
+            todoInput.value = ``;
+
+
+            render();
+
+        }
+
+        function deleteTodo(index) {
+            const todos = loadTodos();
+            // 아닌 놈 잡아서 끄집어내기 (특정 아이)
+            const updateTodos = todos.filter((_,i) => index !== i);
+            saveTodo(updateTodos);
+            render();
+        }
+
+        function render() {
+            const todos = loadTods();
+            todoLIst.innerHTML='';
+
+            todos.forEach((todo,index)=> {
+                const li = document.createElement(`li`)
+                li.className = `todo-item`;
+                li.textContent = todo;
+
+
+                //삭제 버튼
+                const deleteBtn = document.createElement(`button`)
+                deleteBtn.className = `delete-btn`;
+                deleteBtn.textContent = `삭제`;
+
+                deleteBtn.addEventListener(`click`,() => {
+                    deleteTodo(index);
+                })
+                li.appendChid(deleteBtn);
+                //
+
+
+                todoLIst.appendChild(li);
+            })
+        }
+
+        render();
+
+
+        // 2. 추가한 목록이 배열로 로컬스토리지에 저장 
+        //      입력된 글자들을 배열에 담아야함 -> 배열관리 
+        //      addTodo 함수안에 저장도 같이
+        //      로컬스토리지에 저장하려면 이미 저장된 데이터를 블러와서 거기에 추가필요!
+
+        // 3. 새로고침시 로컬스토리지에 있는 배열이 로드되어서 화면에 그려짐
+        //      바로 실행된 랜더함수를 구현
+        //      랜더함수에서 로컬스토리지 읽어오기 -> 데이터가 없다면? 빈배열을 쓰기
+        //      읽어온 데이터를 돔으로 렌더링 시켜주기 
+
+        // 4. 로컬스토리지 로드 함수 만들어서 렌더와 addTodo에서 사용하기
+        //      로컬스토리지 세이브 함수도 만들어서 사용하기
+        
+
+    </script>
+</body>
+</html>
