@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // reverse 활용
+        const str = "Hello"
+        const name = "Kim"
+        // ...text : spread 연산자 문자열 배열 메서드 못 쓰니 
+        // join 해야하는 이유 : 배열 상태라 다 뜯어져 있으니 합쳐야함 
+        // 해석 >> 문자열 배열로 바꾸어야하니 ...text  배열로 reverse 뒤집고 , join 다시 문자열로 합쳐라
+        function reverseString(text) {
+            return `문자열 뒤집기 : ${[...text].reverse().join("")}`;
+        }
+        
+        
+        console.log(reverseString(str))
+        console.log(reverseString(name))
+
+
+        // padThree 활용 
+        // String(num) : 숫자를 문자열로 바꾸어
+        // .padStart (3,"0") : 길이 3 될 떄까지 앞에 0 채우는겨 
+        function padThree(num) {
+            return String(num).padStart(3, "0");
+        }
+
+        console.log(padThree(5))
+        console.log(padThree(8))
+
+        // repaceAll (특정 문자 삭제)
+        // str : 찾을값 >> 원본 문자열 작업대상  
+        // char : 바꿀값  >> 삭제할 대상 문자열 
+        // "" : 지워진 자리 ( 대체 문자열 )
+        function removeAll(str,char) {
+            return str.replaceAll(char,"");
+
+        }
+        console.log(removeAll("hello world","l"))
+        console.log(removeAll("banana","a"))
+        
+    </script>
+
+    
+
+    
+</body>
+</html>
