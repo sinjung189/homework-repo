@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const result = [ 5, 12, 8, 130 ,44 ,3 ]
+
+        // 순서 중요 
+        // 이유 : 거를 건 먼저 걸러 filter  / 값 바꾸어 map / 정렬 마지막 sort
+
+        .filter (n => n >= 10) // 12 130 44 
+        .map (n=> n*2) // 2배 24 260 88
+        .sort ((a,b) => a - b ) // a - b 오름 / b - a 내림 기억해두기
+
+        console.log (result); // 24 88 260
+    </script>
+</body>
+</html>
