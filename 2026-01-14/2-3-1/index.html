@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 모든 약수 배열반환 구현 
+        function getDivisors(n) {
+            const divisors = [];
+            for (let i = 1; i <= n; i++){
+                if (n % i === 0) {
+                    divisors.push(i);
+
+                }
+
+            }
+            
+            return divisors;
+        }
+
+        // 약수 개수 반환하는 
+        function conuntDivisors(n) {
+            return getDivisors(n).length 
+        }
+
+        // 약수의 합을 반환하는 
+        function sumDivisors(n) {
+            return getDivisors(n).reduce((acc,cur) => acc + cur, 0);
+        }
+        
+        const n = 12
+        console.log(getDivisors(n))
+        console.log(conuntDivisors(n))
+        console.log(sumDivisors(n))
+        // 각 함수 n = 12  테스트!! 
+    </script>
+</body>
+</html>
