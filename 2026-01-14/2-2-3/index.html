@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function rollDice() {
+            // 1. 1~6 정수 반환
+            //  실행마다 1~6 중 하나 랜덤 반환?
+            return Math.floor(Math.random()*6) +1; }
+
+            // 
+            function getScore(a, b) {
+            // 2. 절대값 차이 반환 ( 두 주사위 값의 >> 항상 0 이상의 정수 )
+            return Math.abs(a-b);
+        }
+
+
+            const d1 = rollDice(); // 첫 번째 주사위 값 
+            const d2 = rollDice();  // 두 번째 주사위 값?
+
+            console.log(d1, d2, getScore(d1, d2)); //  두 값의 절대값 차이 
+    </script>
+</body>
+</html>
