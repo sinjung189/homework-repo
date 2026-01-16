@@ -1,8 +1,6 @@
 # 공개 API 응답 과제
 
 ## 1. 공개 URL 직접 접속
-
-
 API 
 : https://jsonplaceholder.typicode.com/posts/1
 
@@ -42,6 +40,7 @@ Request: 클라이언트 → 서버
 
  Response: 서버 → 클라이언트
       "여기 게시글 10개요"
+
 
 
 
