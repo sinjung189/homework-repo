@@ -25,7 +25,8 @@ API
 
 
   ----
-  Request vs Response 차이
+  
+  ## Request vs Response 차이
 
   ## Request
     -
@@ -42,6 +43,7 @@ Request: 클라이언트 → 서버
 
  Response: 서버 → 클라이언트
       "여기 게시글 10개요"
+
 
 
 
