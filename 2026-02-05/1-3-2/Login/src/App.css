@@ -1,0 +1,119 @@
+
+.box {
+  padding-top: 30px;
+}
+
+#root {
+  width: 450px;
+  height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem;
+  /* text-align: center; */
+  background: linear-gradient(135deg,#163074 0%,#304691 35%,#55669e 65%,#384964 100% );
+  border: 1px solid;
+  border-radius: 10px;
+  box-shadow: -10px 15px 6px rgba(0,0,0,0.2);
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+
+.password-box {
+  display: flex;
+  flex-direction: column;
+  /* gap: 15px; */
+}
+
+.email-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.email,.password,.password-top { 
+  /* width: 100%; */
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(15,23,42,0.7);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.password-top {
+  margin-bottom: 4px;
+}
+
+.email {
+  width: 280px;
+}
+
+input {
+  color: #ffffff;
+}
+
+input::placeholder {
+  color: #ffffff
+}
+
+.prosecutor {
+  font-size: 15px;
+  font-weight: 800;
+  height: 100%;
+  background-color: #E0E7FF;
+  color: #1E293B;
+}
+
+.join {
+  height: 100%;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 900;
+  background: rgba(15,23,42,0.7);
+  border-radius: 10px;
+}
+
+.join-box {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.consent-text {
+  padding-left: 5px ;
+  color: white;
+  font-weight: 400;
+}
+
+.text {
+  color:white;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.email-error, 
+.error-box,
+.email-check {
+  min-height: 25px;
+  color: red;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  padding: 2px 0px 6px 15px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
+.email-check {
+  color: rgb(65, 201, 65);
+  font-weight: 800;
+}
+
+.error {
+  margin: 0;
+}
