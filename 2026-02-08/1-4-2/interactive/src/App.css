@@ -1,0 +1,88 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+body {
+  background: #606064;
+  
+}
+
+.time-box {
+  height: 100%;
+  padding: 0 30px 45px 30px;
+  border-radius: 20px;
+  display: flex;
+  background-color: #18181a;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.9),
+    0 10px 30px rgba(0, 0, 0, 0.8),
+    /* 안쪽 눌린 느낌 */
+    inset 0 -6px 12px rgba(0, 0, 0, 0.9);
+}
+
+.time-card {
+  color: #ffffff;
+  background: linear-gradient(
+    270deg,
+    #242527 0%,
+    #646161 50%,
+    #242527  100%
+  );
+  padding: 40px 48px;
+  border-radius: 20px;
+   box-shadow:
+   /* 안쪽부분 */
+    inset 0 -8px 16px rgba(0, 0, 0, 0.9);
+}
+
+
+.time-label {
+  font-size: 14px;
+  color: #dddddd;
+  margin-bottom: 12px;
+}
+
+
+.time-btn {
+  border: none;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid;
+  border-color: #000000;
+  border-radius: 99px;
+  transition: all 0.2s ease;
+}
+
+.time-btn.start {
+  background: #448d35d8;
+  color: #f8f8f8;
+}
+
+.time-btn.stop {
+  background: #e91414cb;
+  color: #f5f5f5;
+}
+
+.time-btn:hover {
+  transform: translateY(-2px);
+}
+
+.time-btn:active {
+  transform: translateY(0);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
