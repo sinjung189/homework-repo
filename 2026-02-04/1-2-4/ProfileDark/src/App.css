@@ -1,0 +1,53 @@
+body {
+  background-color: var(--bg);
+}
+
+:root {
+  --bg: #607381;
+  --text: #202c33;
+}
+
+body.dark {
+  --bg: #222f38;
+  --text: #Ffffff;
+}
+
+.profile-Theme {
+  padding: 50px;
+  background-color: var(--bg);
+  border: 1px solid;
+  /* border-color: #ffffff; */
+  border-radius: 25px;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.6);
+  
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.massage {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.header {
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  padding: 2em;
+}
+
+span {
+  color: var(--text);
+  padding: 15px 0 15px 0 ; 
+}
+
+.edit {
+  display: flex;
+  justify-content: flex-end; /* 오른쪽 정렬 */
+}
+
