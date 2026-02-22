@@ -1,0 +1,81 @@
+body {
+  background: #f4f5f7;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 28px;
+  box-shadow: 
+  0 20px 60px rgba(0, 0, 0, 0.08),
+  0 4px 20px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  
+}
+.header:hover {
+  transform: translateY(-4px);
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+.lg-text {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+
+.gradient-btn {
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 99px;
+  border: none;
+  color: #dce6fc;
+  background: white;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  transition: 0.3s ease;
+}
+
+.gradient-btn::before {
+  border-radius: 99px;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+
+}
+/*  14~22 중효과 */
+.gradient-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 27px rgba(99, 102, 241, 0.35);
+}
