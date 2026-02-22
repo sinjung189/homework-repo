@@ -1,0 +1,128 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem;
+  text-align: center;
+  /* background-color: #ececec; */
+  border-radius: 30px;
+}
+
+body {
+  background: linear-gradient(135deg, #2f3542, #1e272e);
+}
+
+.todo-card {
+  width: 100%;
+  padding: 40px;
+  border-radius: 28px;
+  background: #f4f5f7;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.todo-content {
+  display: flex;
+  gap: 15px;
+}
+
+.todo-add {
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #5b7cfa, #4663e6);
+  box-shadow: 0 6px 14px rgba(70, 99, 230, 0.35);
+  transition: 0.2s;
+}
+
+.todo-add:hover {
+  transform: translateY(-2px);
+}
+
+.todo-add:active {
+  transform: translateY(0);
+}
+
+.todo-text {
+  flex: 1;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #dcdfe4;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.todo-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+  gap: 18px;
+  /* background: white; */
+  border-radius: 15px;
+  margin-bottom: 16px;
+  padding: 16px;
+  /* box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); */
+  /* transition: 0.2s; */
+  list-style: none;
+}
+
+.todo-item li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.delete-btn {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  font-size: 13px;
+  transition: 0.2s;
+  background: #f1f3f5;
+  align-self: flex-end;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
